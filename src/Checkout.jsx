@@ -6,7 +6,6 @@ import {
   useSettings,
   Divider,
 } from "@shopify/ui-extensions-react/checkout";
-import { TextBlock } from "@shopify/ui-extensions/checkout";
 
 // 1. Choose an extension target
 const checkoutBlock = reactExtension("purchase.checkout.block.render", () => <App />);
