@@ -7,24 +7,24 @@ import {
   Divider,
 } from "@shopify/ui-extensions-react/checkout";
 
-// 1. Choose an extension target
+// Set the entry points for the extension
 const checkoutBlock = reactExtension("purchase.checkout.block.render", () => <App />);
 export { checkoutBlock };
 
 function App() {
 
-  const { descriptionBold: clientDescription_bold , description: clientDescription } = useSettings();
+  const { client_description_bold: descriptionBold ,client_description : description } = useSettings();
 
-  const descriptionBold = clientDescription_bold ?? 'Limited Time sale'
-  const description = clientDescription ?? 'can not be combined with any other offers or specials.';
+  const client_description_bold =  descriptionBold  ?? 'Limited time Anniversary Sale'
+  const client_description = description  ?? 'can not be combined with any other offers or specials.';
 
   return (
     <>
       <Divider />
       <BlockStack padding={"base"}>
         <TextBlock>
-          <Text emphasis="bold">{descriptionBold} </Text>
-          <Text>{description}</Text>
+          <Text emphasis="bold">{client_description_bold} </Text>
+          <Text>{client_description}</Text>
         </TextBlock>
       </BlockStack>
       <Divider />

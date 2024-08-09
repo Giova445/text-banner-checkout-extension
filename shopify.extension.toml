@@ -16,8 +16,9 @@ type = "ui_extension"
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 
 [[extensions.targeting]]
-module = "./src/Checkout.jsx"
 target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+export = "checkoutBlock"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
@@ -46,12 +47,12 @@ api_access = true
 
 [extensions.settings]
   [[extensions.settings.fields]]
-    key = "clientDescription_bold"
+    key = "client_description_bold"
     type = "single_line_text_field"
-    name = "text description"
+    name = "text description bold"
     description = "Enter a description for upsell text bold"
   [[extensions.settings.fields]]
-    key = "clientDescription"
+    key = "client_description"
     type = "single_line_text_field"
     name = "text description"
     description = "Enter a description for upsell text"
